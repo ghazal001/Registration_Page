@@ -81,13 +81,7 @@ class Login extends GetView<LoginController> {
                   Center(
                     child: ElevatedButton(
                         onPressed:(){
-                          print("clicked");
-                          print("email");
-                          print(controller.email.value.text);
-
-                          print("clicked");
-                          print("password");
-                          print(controller.password.value.text);
+                          controller.login();
                           },
                         child: Text("Login")
                     ),
