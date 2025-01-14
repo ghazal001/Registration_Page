@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:registrationpage/Routes/AppPage.dart';
 import 'package:registrationpage/Routes/AppRoute.dart';
 import 'package:registrationpage/Views/Login.dart';
-import 'package:registrationpage/Views/Registration.dart';
+
 
 void main() {
   runApp(const MyApp());

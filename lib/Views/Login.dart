@@ -12,92 +12,111 @@ class Login extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
+
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+
         title: Center(child: Text("Login Page")),
       ),
-      body: Expanded(
-        child: SingleChildScrollView(
-          child: Center(
-            // Center is a layout widget. It takes a single child and positions it
-            // in the middle of the parent.
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
 
-                // Column is also a layout widget. It takes a list of children and
-                // arranges them vertically. By default, it sizes itself to fit its
-                // children horizontally, and tries to be as tall as its parent.
-                //
-                // Column has various properties to control how it sizes itself and
-                // how it positions its children. Here we use mainAxisAlignment to
-                // center the children vertically; the main axis here is the vertical
-                // axis because Columns are vertical (the cross axis would be
-                // horizontal).
-                //
-                // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-                // action in the IDE, or press "p" in the console), to see the
-                // wireframe for each widget.
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
 
 
-                  Text("Email"),
-                  TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder()
-                    ),
-                    controller: controller.email,
+                Text("Email"),
+                SizedBox(height: 8),
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: "Enter your Email here",
+                      hintStyle: TextStyle(
+                        fontWeight: FontWeight.w300, // Use a lighter font weight
+                        color: Colors.grey,          // Optional: Change color to a lighter shade
+                      ),
+                      border: OutlineInputBorder()
                   ),
+                  controller: controller.email,
+                ),
 
 
-                  SizedBox(height: 10,),
+                SizedBox(height: 10,),
 
 
-                  Text("Password"),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder()
-                    ),
-                    controller: controller.password,
+                Text("Password"),
+                SizedBox(height: 8),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      hintText: "Enter your Password here",
+                      hintStyle: TextStyle(
+                        fontWeight: FontWeight.w300, // Use a lighter font weight
+                        color: Colors.grey,          // Optional: Change color to a lighter shade
+                      ),
+                      border: OutlineInputBorder()
                   ),
+                  controller: controller.password,
+                ),
 
-                  SizedBox(height: 10,),
+                SizedBox(height: 10,),
 
-                  Center(
-                    child: ElevatedButton(
-                        onPressed:(){
-                          controller.login();
-                          },
-                        child: Text("Login")
-                    ),
-                  ),
-
-
-                  Center(
-                    child: ElevatedButton(
-                        onPressed:(){
-                          Get.toNamed(AppRoute.register);
+                Center(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.purple, // Set the button color to purple
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8), // Rounded corners
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16), // Optional: Adjust padding
+                      ),
+                      onPressed:(){
+                        controller.login();
                         },
-                        child: Text("Register ")
-                    ),
-                  )
-                ],
-              ),
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Colors.white, // Ensure text is readable on a purple background
+                          fontSize: 14,        // Optional: Adjust font size
+                          fontWeight: FontWeight.bold, // Optional: Make text bold
+                        ),
+                      )
+                  ),
+                ),
+
+                SizedBox(height: 10,),
+
+                Center(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                      ),
+                      onPressed:(){
+                        //hon aamalna hek laan hiye b gher controller
+                        Get.toNamed(AppRoute.register);
+
+                        },
+
+                      child: Text(
+                          "Doesn't have an account? Register here ",
+                          style: TextStyle(
+                            color: Colors.black, // Ensure text is readable on a purple background
+                            fontSize: 14,        // Optional: Adjust font size
+                            fontWeight: FontWeight.bold, // Optional: Make text bold
+                      )
+                  ),
+                )
+                )
+              ],
             ),
           ),
         ),

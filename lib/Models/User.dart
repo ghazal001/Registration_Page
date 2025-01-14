@@ -3,14 +3,18 @@ import 'dart:convert';
 class User{
   final String? name;
   final String email;
-  final String? phone;
+  final String? mobile;
+  final String? country;
   final String password;
+
 
   User({
     this.name,
-   required this.email,
-   this.phone,
-   required this.password,
+    required this.email,
+    this.mobile,
+    this.country,
+    required this.password,
+
 });
 
   Map<String,dynamic> ToMap(){
@@ -18,7 +22,8 @@ class User{
       'name':name,
       'email':email,
       'password':password,
-      'phone':phone
+      'mobile':mobile,
+      'country':country
     };
   }
 

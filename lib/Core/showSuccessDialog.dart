@@ -9,7 +9,7 @@ void showSuccessDialog (BuildContext context , title , body ,Function? callback)
         return AlertDialog(
           title: Text(title),
           content: Text(body),
-          actions: [
+          actions: <Widget>[
             CupertinoDialogAction(
                 child: Text("OK"),
 

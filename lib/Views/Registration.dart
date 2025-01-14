@@ -7,85 +7,101 @@ import 'package:registrationpage/Controllers/RegistrationController.dart';
 class Registration extends GetView<RegistrationController> {
 
 
-
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Center(child: Text("Registration Page")),
       ),
       body: Expanded(
         child: SingleChildScrollView(
           child: Center(
-            // Center is a layout widget. It takes a single child and positions it
-            // in the middle of the parent.
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 16.0),
               child: Column(
-
-                // Column is also a layout widget. It takes a list of children and
-                // arranges them vertically. By default, it sizes itself to fit its
-                // children horizontally, and tries to be as tall as its parent.
-                //
-                // Column has various properties to control how it sizes itself and
-                // how it positions its children. Here we use mainAxisAlignment to
-                // center the children vertically; the main axis here is the vertical
-                // axis because Columns are vertical (the cross axis would be
-                // horizontal).
-                //
-                // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-                // action in the IDE, or press "p" in the console), to see the
-                // wireframe for each widget.
-                mainAxisAlignment: MainAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text("Name"),
+                  SizedBox(height: 8),
                   TextField(
                     decoration: InputDecoration(
+                        hintText: "Enter your Name here",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w300, // Use a lighter font weight
+                          color: Colors.grey,          // Optional: Change color to a lighter shade
+                        ),
                         border: OutlineInputBorder()
                     ),
                     controller:controller.name,
                   ),
 
+                  // _buildInputLabel('Name'),
+
+
 
                   SizedBox(height: 10,),
 
                   Text("Email"),
+                  SizedBox(height: 8),
                   TextField(
                     decoration: InputDecoration(
+                        hintText: "Enter your Email",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w300, // Use a lighter font weight
+                          color: Colors.grey,          // Optional: Change color to a lighter shade
+                        ),
                         border: OutlineInputBorder()
                     ),
                     controller: controller.email,
                   ),
+
+
                   SizedBox(height: 10,),
 
-                  Text("Phone"),
+                  Text("Mobile"),
+                  SizedBox(height: 8),
                   TextField(
                     decoration: InputDecoration(
+                        hintText: "Enter your Mobile here",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w300, // Use a lighter font weight
+                          color: Colors.grey,          // Optional: Change color to a lighter shade
+                        ),
                         border: OutlineInputBorder()
                     ),
-                    controller: controller.phone,
+                    controller: controller.mobile,
+                  ),
+
+                  SizedBox(height: 10,),
+
+                  Text("Country"),
+                  SizedBox(height: 8),
+                  TextField(
+                    decoration: InputDecoration(
+                        hintText: "Enter your Country here",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w300, // Use a lighter font weight
+                          color: Colors.grey,          // Optional: Change color to a lighter shade
+                        ),
+                        border: OutlineInputBorder()
+                    ),
+                    controller: controller.country,
                   ),
 
                   SizedBox(height: 10,),
 
                   Text("Password"),
+                  SizedBox(height: 8),
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
+                        hintText: "Enter your password here",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w300, // Use a lighter font weight
+                          color: Colors.grey,          // Optional: Change color to a lighter shade
+                        ),
                         border: OutlineInputBorder()
                     ),
                     controller: controller.password,
@@ -106,7 +122,7 @@ class Registration extends GetView<RegistrationController> {
                         onPressed:(){
                             Get.back();
                         },
-                        child: Text("Back")
+                        child: Text("Already have an account? Login")
                     ),
                   )
                 ],
